@@ -1,31 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <title>Bootstrap Example</title>
+    <title>Traveling</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+
+    </style>
 </head>
 <body>
 
 <div class="container">
     <ul class="nav nav-pills">
         <li class="active"><a data-toggle="pill" href="#home">Home</a></li>
-        <li><a data-toggle="pill" href="#menu1">Menu 1</a></li>
-        <li><a data-toggle="pill" href="#menu2">Menu 2</a></li>
-        <li><a data-toggle="pill" href="#menu3">Menu 3</a></li>
+        <li><a data-toggle="pill" href="#NZ">New Zealand</a></li>
+        <li><a data-toggle="pill" href="#TW">Taiwan</a></li>
+        <li><a data-toggle="pill" href="#SW">Switzerland</a></li>
     <ul class="nav nav-pills pull-right">
-        <li><a data-toggle="pill" href="#">Login</a></li>
-        <li><a data-toggle="pill" href="#">Register</a></li>
+        <li><a data-toggle="pill" href="#Login">Login</a></li>
+        <li><a data-toggle="pill" href="#Register">Register</a></li>
     </ul>
     </ul>
     <div class="tab-content">
-        <div id="home" class="tab-pane fade in active">
+        <!--Description of what this assignment is-->
+        <div id="home" class="tab-pane fade in active" >
 
         </div>
-        <div id="menu1" class="tab-pane fade">
+        <!-- First location New Zealand-->
+        <div id="NZ" class="tab-pane fade">
+            <div class="jumbotron">
+                <div class="container">
+                    <h1>New Zealand</h1>
+                    <p>Location/description</p>
+                </div>
+            </div>
+
+            <div class="container">
+
+                <div class = "row">
+                    <!--Adding an image and information for this activity-->
+                    <div class="col-md-4" style="background-color: lightskyblue;height: 500px">
+                        <h2>Activitiy</h2>
+                        <image src="212.jpg" width = "100" height="100" style ="margin-bottom: 20px"></image>
+                        <iframe width="250" height="200" src="https://www.youtube.com/embed/kwyr-1ytsN4"></iframe>
+                        <p>what is it</p>
+                        <p>
+                            <a class="btn btn-secondary" href="https://google.com" role="button">more details »</a>
+                        </p>
+                    </div>
+                    <!--Adding an image and information for this activity-->
+                    <div class="col-md-4" style="background-color: lightyellow; height: 500px">
+                        <h2>Activity 1</h2>
+                        <p>what is it</p>
+                        <p>
+                            <a class="btn btn-secondary" href="#" role="button">more details »</a>
+                        </p>
+                    </div>
+                    <!--Adding an image and information for this activity-->
+                    <div class="col-md-4" style="background-color: lightseagreen; height: 500px">
+                        <h2>Activity2</h2>
+                        <p>what is it</p>
+                        <p>
+                            <a class="btn btn-secondary" href="#" role="button">more details »</a>
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Second location Taiwan-->
+        <div id="TW" class="tab-pane fade">
             <div class="jumbotron">
                 <div class="container">
                     <h1>The location</h1>
@@ -67,7 +115,8 @@
 
             </div>
         </div>
-        <div id="menu2" class="tab-pane fade">
+        <!--Third location switzerland-->
+        <div id="SW" class="tab-pane fade">
             <div class="jumbotron">
                 <div class="container">
                     <h1>The location</h1>
@@ -103,53 +152,14 @@
 
                     </div>
                 </div>
-
-                <hr>
-                <p>some message in the footer</p>
-
             </div>
+
         </div>
-        <div id="menu3" class="tab-pane fade">
-            <div class="jumbotron">
-                <div class="container">
-                    <h1>The location</h1>
-                    <p>Location/description</p>
-                </div>
-            </div>
-
-            <div class="container">
-
-                <div class = "row">
-                    <div class="col-md-4">
-                        <h2>Activitiy</h2>
-                        <p>what is it</p>
-                        <p>
-                            <a class="btn btn-secondary" href="https://google.com" role="button">more details »</a>
-                        </p>
-                    </div>
-
-                    <div class="col-md-4">
-                        <h2>Activity 1</h2>
-                        <p>what is it</p>
-                        <p>
-                            <a class="btn btn-secondary" href="#" role="button">more details »</a>
-                        </p>
-                    </div>
-
-                    <div class="col-md-4">
-                        <h2>Activity2</h2>
-                        <p>what is it</p>
-                        <p>
-                            <a class="btn btn-secondary" href="#" role="button">more details »</a>
-                        </p>
-
-                    </div>
-                </div>
-
-                <hr>
-                <p>some message in the footer</p>
-
-            </div>
+        <div id="Login" class="tab-pane fade">
+            <p>testing</p>
+        </div>
+        <div id="Register" class="tab-pane fade">
+            <p>Register</p>
         </div>
     </div>
 </div>
