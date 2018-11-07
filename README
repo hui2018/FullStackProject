@@ -1,2 +1,4 @@
 In Main.html it will be a front-end navigation bar where user can click on the bar and it will go to
 a different tab that contains different information. The navigation will be implemented using bootstrap.
+
+To display the new tab, the user will have to enter the "admin" into the user and password field under the login tab.
