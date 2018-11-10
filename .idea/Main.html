@@ -11,19 +11,28 @@
         .input{
             margin-top: 10px;
         }
-
     </style>
 </head>
 <body>
 <!--add id to ul class to display when user login-->
-<div class="container">
+<div class="container" style="background-color:lightblue">
     <ul class="nav nav-pills">
         <li class="active"><a data-toggle="pill" href="#home">Home</a></li>
-        <li><a data-toggle="pill" href="#NZ">New Zealand</a></li>
-        <li><a data-toggle="pill" href="#TW">Taiwan</a></li>
-        <li><a data-toggle="pill" href="#SW">Switzerland</a></li>
-        <li id="test"></li>
-
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#City1">New Zealand<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a href="#NZ1" data-toggle="tab">Itinerary 1</a></li>
+                <li><a href="#NZ2" data-toggle="tab">Itinerary 2</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#City2">Taiwan<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a href="#TW1" data-toggle="tab">Itinerary 1</a></li>
+                <li><a href="#TW2" data-toggle="tab">Itinerary 2</a></li>
+            </ul>
+        </li>
+        <li id="login"></li>
     <ul class="nav nav-pills pull-right">
         <li><a data-toggle="pill" href="#Login">Login</a></li>
         <li><a data-toggle="pill" href="#Register">Register</a></li>
@@ -32,23 +41,12 @@
     <div class="tab-content">
         <!--Description of what this assignment is-->
         <div id="home" class="tab-pane fade in active" >
-
-        </div>
-        <!-- First location New Zealand-->
-        <div id="NZ" class="tab-pane fade">
-            <div class="jumbotron">
-                <div class="container">
-                    <h1>New Zealand</h1>
-                    <p>Location/description</p>
-                </div>
-            </div>
-
             <div class="container">
 
                 <div class = "row">
                     <!--Adding an image and information for this activity-->
-                    <div class="col-md-4" style="background-color: lightskyblue;height: 500px">
-                        <h2>Activitiy</h2>
+                    <div class="col-md-6" style="background-color: lightskyblue;height: 500px; margin-right: 35px">
+                        <h2>Day 1</h2>
                         <image src="212.jpg" width = "100" height="100" style ="margin-bottom: 20px"></image>
                         <iframe width="250" height="200" src="https://www.youtube.com/embed/kwyr-1ytsN4"></iframe>
                         <p>what is it</p>
@@ -57,107 +55,79 @@
                         </p>
                     </div>
                     <!--Adding an image and information for this activity-->
-                    <div class="col-md-4" style="background-color: lightyellow; height: 500px">
-                        <h2>Activity 1</h2>
+                    <div class="col-md-5" style="background-color: lightyellow; height: 500px">
+                        <h2>Map</h2>
                         <p>what is it</p>
                         <p>
                             <a class="btn btn-secondary" href="#" role="button" >more details »</a>
                         </p>
                     </div>
+                </div>
+            </div>
+        </div>
+        <!-- First Itinerary for new zealand-->
+        <div id="NZ1" class="tab-pane fade">
+            <div class="jumbotron">
+                <div class="container">
+                    <h1>Short duration new zealand</h1>
+                    <p>Location/description</p>
+                </div>
+            </div>
+
+            <div class="container">
+
+                <div class = "row">
                     <!--Adding an image and information for this activity-->
-                    <div class="col-md-4" style="background-color: lightseagreen; height: 500px">
-                        <h2>Activity2</h2>
+                    <div class="col-md-6" style="background-color: lightskyblue;height: 500px; margin-right: 50px">
+                        <h2>Day 1 - Auckland</h2>
+                        <image src="212.jpg" width = "100" height="100" style ="margin-bottom: 20px"></image>
+                        <iframe width="250" height="200" src="https://www.youtube.com/embed/kwyr-1ytsN4"></iframe>
+                        <p></p>
+                        <p>
+                            <a class="btn btn-secondary" role="button" onclick="window.open('https://google.com')">more details »</a>
+                        </p>
+                    </div>
+                    <!--Adding an image and information for this activity-->
+                    <div class="col-md-5" style="background-color: lightyellow; height: 500px">
+                        <h2>Map</h2>
                         <p>what is it</p>
                         <p>
-                            <a class="btn btn-secondary" href="#" role="button">more details »</a>
+                            <a class="btn btn-secondary" href="#" role="button" >more details »</a>
                         </p>
-
                     </div>
                 </div>
             </div>
         </div>
 
-        <!--Second location Taiwan-->
-        <div id="TW" class="tab-pane fade">
+        <!--Second Itinerary for new zealand-->
+        <div id="NZ2" class="tab-pane fade">
             <div class="jumbotron">
                 <div class="container">
-                    <h1>The location</h1>
+                    <h1>Long duration new zealand</h1>
                     <p>Location/description</p>
                 </div>
-            </div>
-
-            <div class="container">
-
-                <div class = "row">
-                    <div class="col-md-4">
-                        <h2>Activitiy</h2>
-                        <p>what is it</p>
-                        <p>
-                            <a class="btn btn-secondary" href="https://google.com" role="button">more details »</a>
-                        </p>
-                    </div>
-
-                    <div class="col-md-4">
-                        <h2>Activity 1</h2>
-                        <p>what is it</p>
-                        <p>
-                            <a class="btn btn-secondary" href="#" role="button">more details »</a>
-                        </p>
-                    </div>
-
-                    <div class="col-md-4">
-                        <h2>Activity2</h2>
-                        <p>what is it</p>
-                        <p>
-                            <a class="btn btn-secondary" href="#" role="button">more details »</a>
-                        </p>
-
-                    </div>
-                </div>
-
-                <hr>
-                <p>some message in the footer</p>
-
             </div>
         </div>
-        <!--Third location switzerland-->
-        <div id="SW" class="tab-pane fade">
+
+        <!--First Itinerary for Taiwan-->
+        <div id="TW1" class="tab-pane fade">
             <div class="jumbotron">
                 <div class="container">
-                    <h1>The location</h1>
+                    <h1>Short duration taiwan</h1>
                     <p>Location/description</p>
                 </div>
             </div>
+        </div>
 
-            <div class="container">
-
-                <div class = "row">
-                    <div class="col-md-4">
-                        <h2>Activitiy</h2>
-                        <p>what is it</p>
-                        <p>
-                            <a class="btn btn-secondary" href="https://google.com" role="button">more details »</a>
-                        </p>
-                    </div>
-
-                    <div class="col-md-4">
-                        <h2>Activity 1</h2>
-                        <p>what is it</p>
-                        <p>
-                            <a class="btn btn-secondary" href="#" role="button">more details »</a>
-                        </p>
-                    </div>
-
-                    <div class="col-md-4">
-                        <h2>Activity2</h2>
-                        <p>what is it</p>
-                        <p>
-                            <a class="btn btn-secondary" href="#" role="button">more details »</a>
-                        </p>
-
-                    </div>
+        <!--Second Itinerary for Taiwan-->
+        <div id="TW2" class="tab-pane fade">
+            <div class="jumbotron">
+                <div class="container">
+                    <h1>Long duration Taiwan</h1>
+                    <p>Location/description</p>
                 </div>
             </div>
+        </div>
 
         </div>
         <!--hidden tab road map-->
@@ -168,36 +138,7 @@
                     <p>Location/description</p>
                 </div>
             </div>
-
-            <div class="container">
-
-                <div class = "row">
-                    <div class="col-md-4">
-                        <h2>Activitiy</h2>
-                        <p>what is it</p>
-                        <p>
-                            <a class="btn btn-secondary" href="https://google.com" role="button">more details »</a>
-                        </p>
-                    </div>
-
-                    <div class="col-md-4">
-                        <h2>Activity 1</h2>
-                        <p>what is it</p>
-                        <p>
-                            <a class="btn btn-secondary" href="#" role="button">more details »</a>
-                        </p>
-                    </div>
-
-                    <div class="col-md-4">
-                        <h2>Activity2</h2>
-                        <p>what is it</p>
-                        <p>
-                            <a class="btn btn-secondary" href="#" role="button">more details »</a>
-                        </p>
-
-                    </div>
-                </div>
-            </div>
+        </div>
 
         </div>
         <div id="Login" class="tab-pane fade">
@@ -208,25 +149,33 @@
             <input type="submit" value = "Login" class="input" onclick="setValue()">
         </div>
         <div id="Register" class="tab-pane fade">
-            User Name:<input type ="text" placeholder="Enter User Name" class="input">
+            User Name:<input type ="text" placeholder="Enter User Name" class="input" id="Ruser">
             <br>
-            Password:<input type ="text" placeholder="Enter Password" class="input">
+            Password:<input type ="text" placeholder="Enter Password" class="input" id="Rpassword">
             <br>
             Email:<input type ="text" placeholder="Enter Email" class="input">
             <br>
-            <input type="submit" value = "Register" class="input">
+            <input type="submit" value = "Register" class="input"> <!--onclick = "getValue()"-->
         </div>
-    </div>
-</div>
+
 <script type="text/javascript">
     function setValue(){
         var userName = document.getElementById("user").value;
         var password = document.getElementById("password").value;
         if(userName === 'admin' && password === 'admin')
-            document.getElementById('test').innerHTML = "<a data-toggle='pill' href='#Road'>Road</a>";
+            document.getElementById('login').innerHTML = "<a data-toggle='pill' href='#Road'>Road</a>";
         else
             window.alert("Incorrect User Name or Password");
     };
+    /*
+    function getValue(){
+        var userName = document.getElementById("Ruser").value;
+        var password = document.getElementById("Rpassword").value;
+        var allName = [];
+        allName.push({userName:password});
+        window.alert(allName);
+    };
+    */
 </script>
 </body>
 </html>
