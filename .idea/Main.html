@@ -18,7 +18,30 @@
             height: 400px;  /* The height is 400 pixels */
             width: 100%;  /* The width is the width of the web page */
         }
+        .title1{
+            text-align: center;
+        }
+        #slideshow {
+            margin: 80px auto;
+            position: relative;
+            width: 100%;
+            height: 250px;
+            padding: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+        }
 
+        #slideshow > div {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+        }
+        #slideImage
+        {
+            width: 100%;
+            height: 240px;
+        }
     </style>
 </head>
 <body>
@@ -29,14 +52,14 @@
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#City1">New Zealand<span class="caret"></span></a>
             <ul class="dropdown-menu">
-                <li><a href="#NZ1" data-toggle="tab">Itinerary 1</a></li>
-                <li><a href="#NZ2" data-toggle="tab">Itinerary 2</a></li>
+                <li><a href="#NZ1" data-toggle="tab">Itinerary</a></li>
+                <li><a href="#NZ2" data-toggle="tab">Budget</a></li>
             </ul>
         </li>
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#City2">Taiwan<span class="caret"></span></a>
             <ul class="dropdown-menu">
-                <li><a href="#TW1" data-toggle="tab">Itinerary 1</a></li>
+                <li><a href="#TW1" data-toggle="tab">Itinerary</a></li>
                 <li><a href="#TW2" data-toggle="tab">Itinerary 2</a></li>
             </ul>
         </li>
@@ -65,9 +88,24 @@
         <div id="NZ1" class="tab-pane fade">
             <div class="jumbotron">
                 <div class="container">
-                    <h1>Short duration new zealand</h1>
-                    <image src="coverNZ.jpg" width = "100%" height="250" style ="margin-bottom: 10px"></image>
-                    <p>Location/description</p>
+                    <h1 class="title1">New Zealand Itinerary</h1>
+                    <div id="slideshow">
+                        <div><img id=slideImage src="coverNZ.jpg"></div>
+                        <div><img id=slideImage src="https://www.nationsonline.org/gallery/New_Zealand/Lake-Tekapo-New-Zealand.jpg"></div>
+                        <div><img id=slideImage src="https://media.fclmedia.com/global-images/fc/holidays/new-zealand/new-zealand-queenstown-960x296.jpg?b"></div>
+                    </div>
+                    <script>
+                        $("#slideshow > div:gt(0)").hide();
+
+                        setInterval(function() {
+                            $('#slideshow > div:first')
+                                .fadeOut(1000)
+                                .next()
+                                .fadeIn(1000)
+                                .end()
+                                .appendTo('#slideshow');
+                        }, 3000);
+                    </script>
                 </div>
             </div>
 
@@ -76,7 +114,7 @@
                 <!--day 1 of the trip-->
                 <div class = "row">
                     <!--Adding an image and information for this activity-->
-                    <div class="col-md-6" style="background-color: lightskyblue;height: 545px;margin-right: 50px;overflow-y: scroll;">
+                    <div class="col-md-6" style="background-color: lightskyblue;height: 545px;margin-right: 30px;overflow-y: scroll;">
                         <h2>Day 1 - Auckland</h2>
                         <image src="waiheke.jpg" width = "95%" height="250" style ="margin-bottom: 20px"></image>
                         <p>Waiheke Island Tours</p>
@@ -92,13 +130,12 @@
                         <p>Food</p>
                     </div>
                     <!--Adding an image of the map-->
-                    <div class="col-md-5" style="background-color: lightyellow; height: 545px; weight: 100%">
-                        <h2>Map</h2>
-                        <h4>Auckland to Waiheke Island</h4>
+                    <div class="col-md-5" style="background-color: lightyellow; height: 545px; margin-right: 30px;weight: 100%">
+                        <h2>Auckland to Waiheke Island</h2>
                         <image src="auckland_activity1.jpeg" width = "95%" height="250" style ="margin-bottom: 20px"></image>
                         <p>
                             Auckland --> Bucklands beach (take the ferry) --> Waiheke island
-                            <a class="btn btn-secondary" role="button" onclick="window.open('https://www.google.com/maps/dir/Auckland+1010,+New+Zealand/Waiheke+Island,+Auckland,+New+Zealand/@-36.851849,174.798528,11z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x6d72caf8a2cd8a15:0x693dad2b3037da65!2m2!1d174.7657015!2d-36.8502824!1m5!1m1!1s0x6d72c896c74039b5:0x500ef6143a31250!2m2!1d175.1127916!2d-36.7978867')">more details »</a>
+                            <a class="btn btn-secondary" role="button" onclick="window.open('https://www.google.com/maps/dir/Auckland+1010,+New+Zealand/Waiheke+Island,+Auckland,+New+Zealand/@-36.851849,174.798528,11z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x6d72caf8a2cd8a15:0x693dad2b3037da65!2m2!1d174.7657015!2d-36.8502824!1m5!1m1!1s0x6d72c896c74039b5:0x500ef6143a31250!2m2!1d175.1127916!2d-36.7978867')">direction details »</a>
                         </p>
                     </div>
                 </div>
@@ -106,7 +143,7 @@
                 <!--Day 2 of the trip-->
                 <div class = "row">
                     <!--Adding an image and information for this activity-->
-                    <div class="col-md-6" style="background-color: lightskyblue;height: 545px; margin-right: 50px; margin-top:50px; overflow-y: scroll;">
+                    <div class="col-md-6" style="background-color: lightskyblue;height: 545px; margin-right: 30px; margin-top:50px; overflow-y: scroll;">
                         <h2>Day 2 - Tauranga</h2>
                         <image src="maunganui.jpg" width = "95%" height="250" style ="margin-bottom: 20px"></image>
                         <p>Hike up Mt.Maunganui</p>
@@ -119,13 +156,12 @@
                         <p>Food</p>
                     </div>
                     <!--Adding an image of the map-->
-                    <div class="col-md-5" style="background-color: lightyellow; height: 545px;margin-top:50px">
-                        <h2>Map</h2>
-                        <h4>Auckland to Tauranga</h4>
+                    <div class="col-md-5" style="background-color: lightyellow; height: 545px;margin-right: 30px;margin-top:50px">
+                        <h2>Auckland to Tauranga</h2>
                         <image src="auckland_activity2.jpeg" width = "95%" height="300" style ="margin-bottom: 20px"></image>
                         <p>
                             Auckland --> Tauranga
-                            <a class="btn btn-secondary" role="button" onclick="window.open('https://www.google.com/maps/dir/Auckland,+New+Zealand/Tauranga,+New+Zealand/@-37.3643775,174.8360038,8.7z/data=!4m14!4m13!1m5!1m1!1s0x6d0d47fb5a9ce6fb:0x500ef6143a29917!2m2!1d174.7633315!2d-36.8484597!1m5!1m1!1s0x6d6e76e77bd464e5:0x500ef6143a39926!2m2!1d176.1651295!2d-37.6877975!3e0')">more details »</a>
+                            <a class="btn btn-secondary" role="button" onclick="window.open('https://www.google.com/maps/dir/Auckland,+New+Zealand/Tauranga,+New+Zealand/@-37.3643775,174.8360038,8.7z/data=!4m14!4m13!1m5!1m1!1s0x6d0d47fb5a9ce6fb:0x500ef6143a29917!2m2!1d174.7633315!2d-36.8484597!1m5!1m1!1s0x6d6e76e77bd464e5:0x500ef6143a39926!2m2!1d176.1651295!2d-37.6877975!3e0')">direction details »</a>
                         </p>
                     </div>
                 </div>
@@ -133,9 +169,37 @@
                 <!--Day 3 of the trip-->
                 <div class = "row">
                     <!--Adding an image and information for this activity-->
-                    <div class="col-md-6" style="background-color: lightskyblue;height: 545px; margin-right: 50px; margin-top:50px; overflow-y: scroll;">
+                    <div class="col-md-6" style="background-color: lightskyblue;height: 545px; margin-right: 30px; margin-top:50px; overflow-y: scroll;">
                         <h2>Day 3 - Cathedral Cove</h2>
                         <image src="cathedralCove.jpg" width = "95%" height="250" style ="margin-bottom: 20px"></image>
+                        <p>Walk down to the Cathedral Cove</p>
+                        <br>
+                        <p>From the north end of the beach, a one hour walking track leads along the cliff top
+                            and then descends to the Cove. Here a gigantic arched cavern passes through a white
+                            rock headland to join two secluded coves. The cathedral-like arch gives whole area an
+                            air of grandeur. The beach is sandy with shady pohutukawa trees along the foreshore -
+                            a perfect place for a picnic and a swim.</p>
+                        <a class="btn btn-secondary" role="button" onclick="window.open('https://www.newzealand.com/us/cathedral-cove/')"> more details »</a>
+                        <br>
+                        <p>Food</p>
+                    </div>
+                    <!--Adding an image of the map-->
+                    <div class="col-md-5" style="background-color: lightyellow; height: 545px;margin-right: 30px;margin-top:50px">
+                        <h2>Auckland to Tauranga</h2>
+                        <image src="auckland_activity3.jpeg" width = "95%" height="300px" style ="margin-bottom: 20px"></image>
+                        <p>
+                            Auckland --> Tauranga
+                            <a class="btn btn-secondary" role="button" onclick="window.open('https://www.google.com/maps/dir/Auckland,+New+Zealand/Tauranga,+New+Zealand/@-37.3643775,174.8360038,8.7z/data=!4m14!4m13!1m5!1m1!1s0x6d0d47fb5a9ce6fb:0x500ef6143a29917!2m2!1d174.7633315!2d-36.8484597!1m5!1m1!1s0x6d6e76e77bd464e5:0x500ef6143a39926!2m2!1d176.1651295!2d-37.6877975!3e0')">direction details »</a>
+                        </p>
+                    </div>
+                </div>
+
+                <!--Day 4 of the trip-->
+                <div class = "row">
+                    <!--Adding an image and information for this activity-->
+                    <div class="col-md-6" style="background-color: lightskyblue;height: 545px; margin-right: 30px; margin-top:50px; overflow-y: scroll;">
+                        <h2>Day 4 - Rotorua</h2>
+                        <image src="https://d3ngrkosxxbdp2.cloudfront.net/wp-content/uploads/2018/04/rotorua-geothermal-valley-gallery.jpg" width = "95%" height="250" style ="margin-bottom: 20px"></image>
                         <p>Walk down to the Cathedral Cove</p>
                         <br>
                         <p>Don’t waste any time to soak in those views from the summit of Mt Maunganui, aka, Mauao or
@@ -146,25 +210,50 @@
                         <p>Food</p>
                     </div>
                     <!--Adding an image of the map-->
-                    <div class="col-md-5" style="background-color: lightyellow; height: 545px;margin-top:50px">
-                        <h2>Map</h2>
-                        <h4>Auckland to Tauranga</h4>
-                        <image src="auckland_activity3.jpeg" width = "95%" height="300px" style ="margin-bottom: 20px"></image>
+                    <div class="col-md-5" style="background-color: lightyellow; height: 545px;margin-right: 30px;margin-top:50px">
+                        <h2>Tauranga to Rotorua</h2>
+                        <image src="auckland_activity4.jpeg" width = "95%" height="300px" style ="margin-bottom: 20px"></image>
                         <p>
-                            Auckland --> Tauranga
-                            <a class="btn btn-secondary" role="button" onclick="window.open('https://www.google.com/maps/dir/Auckland,+New+Zealand/Tauranga,+New+Zealand/@-37.3643775,174.8360038,8.7z/data=!4m14!4m13!1m5!1m1!1s0x6d0d47fb5a9ce6fb:0x500ef6143a29917!2m2!1d174.7633315!2d-36.8484597!1m5!1m1!1s0x6d6e76e77bd464e5:0x500ef6143a39926!2m2!1d176.1651295!2d-37.6877975!3e0')">more details »</a>
+                            Tauranga --> Rotorua
+                            <a class="btn btn-secondary" role="button" onclick="window.open('https://www.google.com/maps/dir/Tauranga,+New+Zealand/Rotorua,+New+Zealand/@-37.9299826,175.7921571,9.71z/data=!4m14!4m13!1m5!1m1!1s0x6d6e76e77bd464e5:0x500ef6143a39926!2m2!1d176.1651295!2d-37.6877975!1m5!1m1!1s0x6d6e983d82f6b22b:0x500ef6143a39931!2m2!1d176.2497461!2d-38.1368478!3e0')">direction details »</a>
+                        </p>
+                    </div>
+                </div>
+
+                <!--Day 5 of the trip-->
+                <div class = "row">
+                    <!--Adding an image and information for this activity-->
+                    <div class="col-md-6" style="background-color: lightskyblue;height: 545px; margin-right: 30px; margin-top:50px; overflow-y: scroll;">
+                        <h2>Day 5 - Auckland</h2>
+                        <image src="https://farm1.nzstatic.com/_proxy/imageproxy_1y/serve/la-zeppa.jpg?focalpointx=50&focalpointy=50&height=440&outputformat=jpg&quality=75&source=3669076&transformationsystem=focalpointcrop&width=1280&securitytoken=9D7F5EEE024D58E4CC14F463CE0922B6" width = "95%" height="250" style ="margin-bottom: 20px"></image>
+                        <p>From the north end of the beach, a one hour walking track leads along the cliff top
+                            and then descends to the Cove. Here a gigantic arched cavern passes through a white
+                            rock headland to join two secluded coves. The cathedral-like arch gives whole area an
+                            air of grandeur. The beach is sandy with shady pohutukawa trees along the foreshore -
+                            a perfect place for a picnic and a swim.</p>
+                        <a class="btn btn-secondary" role="button" onclick="window.open('https://www.thecoromandel.com/activities/must-do/cathedral-cove/')"> more details »</a>
+                        <br>
+                        <p>Food</p>
+                    </div>
+                    <!--Adding an image of the map-->
+                    <div class="col-md-5" style="background-color: lightyellow; height: 545px;margin-right: 30px;margin-top:50px">
+                        <h2>Rotorua to Auckland</h2>
+                        <image src="auckland_activity5.jpeg" width = "95%" height="300px" style ="margin-bottom: 20px"></image>
+                        <p>
+                            Rotorua --> Auckland
+                            <a class="btn btn-secondary" role="button" onclick="window.open('https://www.google.com/maps/dir/Rotorua,+New+Zealand/Auckland,+New+Zealand/@-37.4880507,174.6998982,8.15z/data=!4m14!4m13!1m5!1m1!1s0x6d6e983d82f6b22b:0x500ef6143a39931!2m2!1d176.2497461!2d-38.1368478!1m5!1m1!1s0x6d0d47fb5a9ce6fb:0x500ef6143a29917!2m2!1d174.7633315!2d-36.8484597!3e0')">direction details »</a>
                         </p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!--Second Itinerary for new zealand-->
+        <!--Budget for new zealand-->
         <div id="NZ2" class="tab-pane fade">
             <div class="jumbotron">
                 <div class="container">
-                    <h1>Long duration new zealand</h1>
-                    <p>Location/description</p>
+                    <h1 class="title1">Budget</h1>
+                    <image src="http://www.planningandbudget.utoronto.ca/Assets/Academic+Operations+Digital+Assets/Planning+$!26+Budget/Planning+and+Budget+Header.jpg" width = "100%" height="250" style ="margin-bottom: 10px"></image>
                 </div>
             </div>
         </div>
