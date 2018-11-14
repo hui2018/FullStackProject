@@ -22,12 +22,10 @@
             text-align: center;
         }
         #slideshow {
-            margin: 80px auto;
+            margin: 10px auto;
             position: relative;
             width: 100%;
             height: 250px;
-            padding: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
         }
 
         #slideshow > div {
@@ -44,9 +42,9 @@
         }
     </style>
 </head>
-<body>
+<body style="background-image: url('http://www.planwallpaper.com/static/images/518164-backgrounds.jpg');" >
 <!--add id to ul class to display when user login-->
-<div class="container" style="background-color: lightblue">
+<div class="container">
     <ul class="nav nav-pills">
         <li class="active"><a data-toggle="pill" href="#home">Home</a></li>
         <li class="dropdown">
@@ -89,6 +87,7 @@
             <div class="jumbotron">
                 <div class="container">
                     <h1 class="title1">New Zealand Itinerary</h1>
+                    <!--adding a slide show-->
                     <div id="slideshow">
                         <div><img id=slideImage src="coverNZ.jpg"></div>
                         <div><img id=slideImage src="https://www.nationsonline.org/gallery/New_Zealand/Lake-Tekapo-New-Zealand.jpg"></div>
@@ -116,25 +115,23 @@
                     <!--Adding an image and information for this activity-->
                     <div class="col-md-6" style="background-color: lightskyblue;height: 545px;margin-right: 30px;overflow-y: scroll;">
                         <h2>Day 1 - Auckland</h2>
-                        <image src="waiheke.jpg" width = "95%" height="250" style ="margin-bottom: 20px"></image>
-                        <p>Waiheke Island Tours</p>
+                        <image src="https://cdn.eventfinda.co.nz/uploads/events/transformed/987538-448963-34.jpg?v=2" width = "95%" height="250" style ="margin-bottom: 20px"></image>
+                        <p>Visit skytower</p>
                         <br>
-                        <p>Just a short ferry ride from downtown Auckland, Waiheke Island has great
-                            beaches, some of New Zealand’s best boutique wineries, a number of art galleries,
-                            scenic walking trails, and acres of olive groves, making it the ideal getaway.
-                            The island’s calm waters—perfect for watersports like snorkeling, sea kayaking,
-                            and stand-up paddleboarding—and the relaxed bohemian atmosphere in
-                            Oneroa Village draw a steady stream of visitors year-round.</p>
-                        <a class="btn btn-secondary" role="button" onclick="window.open('https://www.waiheke.co.nz/directory/waiheke-activities/')"> more details »</a>
+                        <p>At the base of the Sky Tower, the SKYCITY Auckland entertainment complex is home
+                            to two world-class hotels, Auckland's premier dining precinct with over 20 bars
+                            and restaurants, a 700 seat theatre and a world-class Casino*. There is a lot to
+                            explore at SKYCITY Auckland.</p>
+                        <a class="btn btn-secondary" role="button" onclick="window.open('https://www.skycityauckland.co.nz/sky-tower/')"> more details »</a>
                         <br>
-                        <p>Food</p>
+                        <h3>Food</h3>
                     </div>
                     <!--Adding an image of the map-->
                     <div class="col-md-5" style="background-color: lightyellow; height: 545px; margin-right: 30px;weight: 100%">
-                        <h2>Auckland to Waiheke Island</h2>
-                        <image src="auckland_activity1.jpeg" width = "95%" height="250" style ="margin-bottom: 20px"></image>
+                        <h2>Auckland</h2>
+                        <image src="auckland_activity.jpeg" width = "95%" height="250" style ="margin-bottom: 20px"></image>
                         <p>
-                            Auckland --> Bucklands beach (take the ferry) --> Waiheke island
+                            Auckland
                             <a class="btn btn-secondary" role="button" onclick="window.open('https://www.google.com/maps/dir/Auckland+1010,+New+Zealand/Waiheke+Island,+Auckland,+New+Zealand/@-36.851849,174.798528,11z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x6d72caf8a2cd8a15:0x693dad2b3037da65!2m2!1d174.7657015!2d-36.8502824!1m5!1m1!1s0x6d72c896c74039b5:0x500ef6143a31250!2m2!1d175.1127916!2d-36.7978867')">direction details »</a>
                         </p>
                     </div>
@@ -200,12 +197,14 @@
                     <div class="col-md-6" style="background-color: lightskyblue;height: 545px; margin-right: 30px; margin-top:50px; overflow-y: scroll;">
                         <h2>Day 4 - Rotorua</h2>
                         <image src="https://d3ngrkosxxbdp2.cloudfront.net/wp-content/uploads/2018/04/rotorua-geothermal-valley-gallery.jpg" width = "95%" height="250" style ="margin-bottom: 20px"></image>
-                        <p>Walk down to the Cathedral Cove</p>
+                        <p>Enjoy the geysers and natural hot springs</p>
                         <br>
-                        <p>Don’t waste any time to soak in those views from the summit of Mt Maunganui, aka, Mauao or
-                            “The Mount”. There are a number of walking tracks up and around The Mount, but the 30-minute
-                            climb to the summit rewards you with panoramic views of beaches, Tauranga city and the Pacific Ocean.</p>
-                        <a class="btn btn-secondary" role="button" onclick="window.open('https://www.thecoromandel.com/activities/must-do/cathedral-cove/')"> more details »</a>
+                        <p>Sitting within the Pacific Rim of Fire, Rotorua is a geothermal wonderland with bubbling
+                            mud pools, clouds of steam, and natural hot springs perfect for bathing and relaxing in.
+                            After marvelling at the distinctive landscapes and volcanic activity within a geothermal
+                            park, enjoy a simple soak in a natural hot stream or indulge in a wellness getaway at a
+                            luxurious spa.</p>
+                        <a class="btn btn-secondary" role="button" onclick="window.open('https://www.newzealand.com/us/rotorua/')"> more details »</a>
                         <br>
                         <p>Food</p>
                     </div>
@@ -223,24 +222,28 @@
                 <!--Day 5 of the trip-->
                 <div class = "row">
                     <!--Adding an image and information for this activity-->
-                    <div class="col-md-6" style="background-color: lightskyblue;height: 545px; margin-right: 30px; margin-top:50px; overflow-y: scroll;">
+                    <div class="col-md-6" style="background-color: lightskyblue;height: 545px; margin-right: 30px; margin-top:50px; overflow-y: scroll;margin-bottom: 20px">
                         <h2>Day 5 - Auckland</h2>
-                        <image src="https://farm1.nzstatic.com/_proxy/imageproxy_1y/serve/la-zeppa.jpg?focalpointx=50&focalpointy=50&height=440&outputformat=jpg&quality=75&source=3669076&transformationsystem=focalpointcrop&width=1280&securitytoken=9D7F5EEE024D58E4CC14F463CE0922B6" width = "95%" height="250" style ="margin-bottom: 20px"></image>
-                        <p>From the north end of the beach, a one hour walking track leads along the cliff top
-                            and then descends to the Cove. Here a gigantic arched cavern passes through a white
-                            rock headland to join two secluded coves. The cathedral-like arch gives whole area an
-                            air of grandeur. The beach is sandy with shady pohutukawa trees along the foreshore -
-                            a perfect place for a picnic and a swim.</p>
-                        <a class="btn btn-secondary" role="button" onclick="window.open('https://www.thecoromandel.com/activities/must-do/cathedral-cove/')"> more details »</a>
+                        <image src="waiheke.jpg" width = "95%" height="250" style ="margin-bottom: 20px"></image>
+                        <p>Waiheke Island Tours</p>
+                        <br>
+                        <p>Just a short ferry ride from downtown Auckland, Waiheke Island has great
+                            beaches, some of New Zealand’s best boutique wineries, a number of art galleries,
+                            scenic walking trails, and acres of olive groves, making it the ideal getaway.
+                            The island’s calm waters—perfect for watersports like snorkeling, sea kayaking,
+                            and stand-up paddleboarding—and the relaxed bohemian atmosphere in
+                            Oneroa Village draw a steady stream of visitors year-round.</p>
+                        <a class="btn btn-secondary" role="button" onclick="window.open('https://www.waiheke.co.nz/directory/waiheke-activities/')"> more details »</a>
                         <br>
                         <p>Food</p>
                     </div>
                     <!--Adding an image of the map-->
-                    <div class="col-md-5" style="background-color: lightyellow; height: 545px;margin-right: 30px;margin-top:50px">
+                    <div class="col-md-5" style="background-color: lightyellow; height: 545px;margin-right: 30px;margin-top:50px;overflow-y: scroll;margin-bottom: 20px">
                         <h2>Rotorua to Auckland</h2>
                         <image src="auckland_activity5.jpeg" width = "95%" height="300px" style ="margin-bottom: 20px"></image>
+                        <image src="auckland_activity1.jpeg" width = "95%" height="250px" style ="margin-bottom: 20px"></image>
                         <p>
-                            Rotorua --> Auckland
+                            Rotorua --> Auckland -->Waiheke Island
                             <a class="btn btn-secondary" role="button" onclick="window.open('https://www.google.com/maps/dir/Rotorua,+New+Zealand/Auckland,+New+Zealand/@-37.4880507,174.6998982,8.15z/data=!4m14!4m13!1m5!1m1!1s0x6d6e983d82f6b22b:0x500ef6143a39931!2m2!1d176.2497461!2d-38.1368478!1m5!1m1!1s0x6d0d47fb5a9ce6fb:0x500ef6143a29917!2m2!1d174.7633315!2d-36.8484597!3e0')">direction details »</a>
                         </p>
                     </div>
