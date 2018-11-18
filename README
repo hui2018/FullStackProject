@@ -5,3 +5,6 @@ To display the new tab, the user will have to enter the "admin" into the user an
 
 Each day there will be an information of the location and the map. Each information and map will have an link for
 more information.
+
+Budget calculator will be available when the user login with admin. The calculation is a simple estimate of how much it would
+cost to travel with some basic information
