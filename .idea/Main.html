@@ -45,6 +45,10 @@
             border-collapse: separate;
             border-spacing: 0px 10px;
         }
+        #res
+        {
+            text-align: center;
+        }
     </style>
 </head>
 <body style="background-image: url('http://www.planwallpaper.com/static/images/518164-backgrounds.jpg');" >
@@ -56,14 +60,14 @@
             <a class="dropdown-toggle" data-toggle="dropdown" href="#City1">New Zealand<span class="caret"></span></a>
             <ul class="dropdown-menu">
                 <li><a href="#NZ1" data-toggle="tab">Itinerary</a></li>
-                <li><a href="#NZ2" data-toggle="tab">Budget</a></li>
+                <li><a href="#NZ2" data-toggle="tab">Resource</a></li>
             </ul>
         </li>
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#City2">Iceland<span class="caret"></span></a>
             <ul class="dropdown-menu">
                 <li><a href="#TW1" data-toggle="tab">Itinerary</a></li>
-                <li><a href="#TW2" data-toggle="tab">Budget</a></li>
+                <li><a href="#TW2" data-toggle="tab">Resource</a></li>
             </ul>
         </li>
         <li id="login"></li>
@@ -257,12 +261,75 @@
             </div>
         </div>
 
-        <!--Budget for new zealand-->
+        <!--Resource for new zealand-->
         <div id="NZ2" class="tab-pane fade">
             <div class="jumbotron">
                 <div class="container">
-                    <h1 class="title1">Budget</h1>
-                    <image src="http://www.planningandbudget.utoronto.ca/Assets/Academic+Operations+Digital+Assets/Planning+$!26+Budget/Planning+and+Budget+Header.jpg" width = "100%" height="250" style ="margin-bottom: 10px"></image>
+                    <h1 class="title1">Resource</h1>
+                    <image src="TravelResource.png" width = "100%" height="250" style ="margin-bottom: 10px"></image>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row" style="margin-bottom:10px">
+                    <div class ="col-md-4" style="background-color:mediumpurple; height: 400px; overflow-y: scroll;">
+                        <h3 id="res">Travel planning tips</h3>
+                        <image src="https://s26561.pcdn.co/wp-content/uploads/2017/02/How-to-Plan-a-Trip-Travel-Planning-Tips-1200x800.jpg" width = "95%" height="200px" style ="margin-bottom: 20px"></image>
+                        <h5>
+                           Season
+                        </h5>
+                        <p>
+                            Best time to go to New Zealand would be during spring when its less crowded. Because New
+                            Zealand has some of the best scenary and activites to do where sunlight is required. If
+                            the tourist place is too crowded you won't be able to capture the best photo.
+                        </p>
+                        <h5>Activites to do during spring</h5>
+                        <ul>
+                            <li>Hobiton</li>
+                            <li>Beaches (cathedrove cove)</li>
+                            <li>Bunge jump or Navis swing</li>
+                        </ul>
+                        <br>
+                        <h5>Flight planning</h5>
+                        <p>
+                            Start looking flights super early because the flight constantly changes through the
+                            calender year. Below are some of the website that provide flight prices.
+                        </p>
+                        <div class="row">
+                            <a role="button" onclick="window.open('https://www.expedia.com/')">
+                                <div class ="col-md-4"><image src="expedia.jpeg" style="width:70%;height:70%"></image></div>
+                            </a>
+                            <a role="button" onclick="window.open('https://www.google.com/flights')">
+                                <div class ="col-md-4"><image src="googleflight.jpeg" style="width:70%;height:70%"></image></div>
+                            </a>
+                            <a role="button" onclick="window.open('https://www.kayak.com/')">
+                                <div class ="col-md-4"><image src="kayak.jpeg" style="width:70%;height:70%"></image></div>
+                            </a>
+                        </div>
+                        <br>
+                        <h5>
+                            Research
+                        </h5>
+                        <p>
+                            Best thing to do is to research the destination that you are headed. Sometimes the best place
+                            doesn't show up as the top 10 tourist attraction. My suggestion is to find the attraction of each city
+                            and not just the whole country such as "attraction for new zealand" where we can search for
+                            "attaction for auckland/wellington/queenstown/etc..."
+                        </p>
+                    </div>
+                    <div class ="col-md-4" style="background-color:orange; height:400px; overflow-y: scroll;">
+                        <h3 id="res">Travel photography advice</h3>
+                        <image src="https://static1.squarespace.com/static/526f5bfce4b0c67dab63847d/t/57cca6f7ebbd1afd7c0ee62e/1473029885077/?format=2500w" width = "95%" height="200px" style ="margin-bottom: 20px"></image>
+                        <p>
+
+                        </p>
+                    </div>
+                    <div class ="col-md-4" style="background-color:beige;height: 400px; overflow-y: scroll;">
+                        <h3 id="res">Travel gear</h3>
+                        <image src="https://www.adorama.com/alc/wp-content/uploads/2013/07/shutterstock_267670610-1.jpg" width = "95%" height="200px" style ="margin-bottom: 20px"></image>
+                        <p>
+
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -328,12 +395,13 @@
         var userName = document.getElementById("user").value;
         var password = document.getElementById("password").value;
         if(userName === 'admin' && password === 'admin')
-            document.getElementById('login').innerHTML = "<a data-toggle='pill' href='#Road'>Road</a>";
+            document.getElementById('login').innerHTML = "<a data-toggle='pill' href='#Road'>Budget Calculator</a>";
         else
             window.alert("Incorrect User Name or Password");
     };
 
     function getValue(){
+
         var flightCost = document.getElementById("flight").value;
         var numDays = document.getElementById("days").value;
         var gas = numDays *50;
