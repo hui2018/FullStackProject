@@ -407,11 +407,11 @@
             </div>
         </div>
 
-        <!--Budget for Taiwan-->
+        <!--Budget for Iceland-->
         <div id="TW2" class="tab-pane fade">
             <div class="jumbotron">
                 <div class="container">
-                    <h1>Budget</h1>
+                    <h1>Resource</h1>
                 </div>
             </div>
         </div>
@@ -429,6 +429,28 @@
             <br>
             <input type="submit" value = "Submit" onclick="getValue()">
             <br>
+            <div id="total">
+                <table border="1">
+                    <tr>
+                        <th>Gas</th>
+                        <th>Entertainment</th>
+                        <th>Food</th>
+                    </tr>
+                    <tr>
+                        <td id ="gas"></td>
+                        <td id="entertainment"></td>
+                        <td id="food"></td>
+                    </tr>
+                    <br>
+                </table>
+                <br>
+                <table border="1">
+                    <tr>
+                        <th>Cost</th>
+                        <td id="finalVal"></td>
+                    </tr>
+                </table>
+            </div>
             <br>
             <div id = "output">
 
@@ -473,6 +495,11 @@
         var food = numDays * 20;
         var cost = flightCost*1;
         var total = gas + entertainment+food+cost;
+        document.getElementById('gas').innerHTML = gas;
+        document.getElementById('entertainment').innerHTML = entertainment;
+        document.getElementById('food').innerHTML = food;
+        document.getElementById('finalVal').innerHTML = total;
+
         table = jQuery('#output').append();
         table=jQuery('<table border=\"1\"><tr><th>Gas</th><th>Entertainment</th><th>Food</th></tr>');
         table.appendTo(jQuery('#output'));
@@ -486,12 +513,15 @@
                 td.appendTo(tr);
             }
             jQuery('#output').append('</table>');
+
             tr = jQuery('<table border=\"1\" id=output><tr></tr>');
             tr.appendTo(table);
             td = jQuery('<tr><td>Cost</td><td>'+total+'</td></tr>');
             td.appendTo(tr);
             jQuery('#output').append('</table>');
+
         }
+
     };
 </script>
 </body>
