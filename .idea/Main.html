@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <style>
         .input{
             margin-top: 10px;
@@ -36,6 +37,25 @@
             bottom: 10px;
         }
         #slideImage
+        {
+            width: 100%;
+            height: 240px;
+        }
+        #slideshow1 {
+            margin: 10px auto;
+            position: relative;
+            width: 100%;
+            height: 250px;
+        }
+
+        #slideshow1 > div {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+        }
+        #slideImage1
         {
             width: 100%;
             height: 240px;
@@ -83,9 +103,6 @@
                         <p>Hui Yu Sim</p>
                         <br>
                         <p>CS465</p>
-                        <!--
-                        <iframe width="250" height="200" src="https://www.youtube.com/embed/kwyr-1ytsN4"></iframe>
-                        -->
                     </div>
                 </div>
         </div>
@@ -135,6 +152,19 @@
                         <h5>Bunge Jump</h5>
                         <br>
                         <iframe width="250" height="200" src="https://www.youtube.com/embed/P9p-qmqGGo8"></iframe>
+                        <br>
+                        <h3>Food</h3>
+                        <p>
+                            Love it or hate it, you can't deny that these days, our biggest city knows
+                            how to do food and drink pretty well. With a couple of days to explore, you can
+                            sample a good spread of the impressive culinary variety Auckland has to offer.
+
+                            Take in the regional fare of the city's Chinese and Indian enclaves, just
+                            10 minutes from the city centre. Enjoy a top chef's modern take on the traditional
+                            cuisine of his home country, and a love letter to Tuscany staged in a grand,
+                            exquisitely redecorated historic waterfront building.
+                            <a class="btn btn-secondary" role="button" onclick="window.open('https://www.theurbanlist.com/auckland/a-list/25-ultimate-cheap-eats-to-try-in-auckland')">More information »</a>
+                        </p>
                     </div>
                     <!--Adding an image of the map-->
                     <div class="col-md-5" style="background-color: lightyellow; height: 545px; margin-right: 30px;weight: 100%">
@@ -158,9 +188,18 @@
                         <p>Don’t waste any time to soak in those views from the summit of Mt Maunganui, aka, Mauao or
                             “The Mount”. There are a number of walking tracks up and around The Mount, but the 30-minute
                             climb to the summit rewards you with panoramic views of beaches, Tauranga city and the Pacific Ocean.</p>
-                        <a class="btn btn-secondary" role="button" onclick="window.open('https://www.newzealand.com/us/mount-maunganui/')"> more details »</a>
+                            <a class="btn btn-secondary" role="button" onclick="window.open('https://www.newzealand.com/us/mount-maunganui/')"> more details »</a>
                         <br>
                         <h3>Food</h3>
+                        <p>
+                            Set in the western corner of the idyllic Bay of Plenty, Tauranga, New Zealand, is a
+                            fast-growing hive of activity with a wealth of attractions for those who come for rest
+                            and recuperation. Atop Mount Maunganui visitors can absorb Tauranga’s lingering
+                            coastline, natural hot springs and bubbling marinas. And if the mild climb up the
+                            Mount has worked up a hunger, there are plenty of restaurants in the city below to
+                            satiate the appetite.
+                            <a class="btn btn-secondary" role="button" onclick="window.open('https://theculturetrip.com/pacific/new-zealand/articles/tauranga-s-top-ten-restaurants-eating-well-in-the-bay-of-plenty/')">more details »</a>
+                        </p>
                     </div>
                     <!--Adding an image of the map-->
                     <div class="col-md-5" style="background-color: lightyellow; height: 545px;margin-right: 30px;margin-top:50px">
@@ -403,6 +442,23 @@
             <div class="jumbotron">
                 <div class="container">
                     <h1 class="title1">Iceland Itinerary</h1>
+                    <div id="slideshow1">
+                        <div><img id=slideImage1 src="https://amp.thisisinsider.com/images/5af5b3dc5e48ec4f008b4571-960-720.jpg"></div>
+                        <div><img id=slideImage1 src="https://www.inspiredbyiceland.com/media/hestamynd-snaefellsjokull.jpg?w=1400"></div>
+                        <div><img id=slideImage1 src="http://aboutworldlanguages.com/wp-content/uploads/2013/02/icelandic-685x317.jpg"></div>
+                    </div>
+                    <script>
+                        $("#slideshow1 > div:gt(0)").hide();
+
+                        setInterval(function() {
+                            $('#slideshow1 > div:first')
+                                .fadeOut(1000)
+                                .next()
+                                .fadeIn(1000)
+                                .end()
+                                .appendTo('#slideshow1');
+                        }, 3000);
+                    </script>
                 </div>
             </div>
             <div>
@@ -634,14 +690,14 @@
             <br>
         </div>
 
-        <!--Budget for Iceland-->
+        <!--Resources for Iceland-->
         <div id="TW2" class="tab-pane fade">
             <div class="jumbotron">
                 <div class="container">
-                    <h1>Resource</h1>
+                    <h1 class="title1">Resource</h1>
                 </div>
             </div>
-        </div>
+            <iframe src="https://calendar.google.com/calendar/embed?src=3lscl5t6rt81mc8dhnvfpkdm74%40group.calendar.google.com&ctz=America%2FLos_Angeles" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>        </div>
 
         <!--hidden tab road map-->
         <div id="Road" class="tab-pane fade">
@@ -654,10 +710,12 @@
             <br>
             Days travel:<input type ="number" placeholder="Number of days" id="days">
             <br>
+            Budget:<input type ="number" placeholder="Max budget" id="budget">
+            <br>
             <input type="submit" value = "Submit" onclick="getValue()">
             <br>
             <div id="total">
-                <table border="1">
+                <table border="1" class= "table table-sm">
                     <tr>
                         <th>Gas</th>
                         <th>Entertainment</th>
@@ -671,7 +729,7 @@
                     <br>
                 </table>
                 <br>
-                <table border="1">
+                <table border="1" class= "table table-sm">
                     <tr>
                         <th>Cost</th>
                         <td id="finalVal"></td>
@@ -679,12 +737,8 @@
                 </table>
             </div>
             <br>
-            <div id = "output">
-
-            </div>
+            <div id = "output"></div>
         </div>
-
-
         <div id="Login" class="tab-pane fade">
             User Name:<input type ="text" placeholder="Enter User Name" class="input" id="user">
             <br>
@@ -699,7 +753,7 @@
             <br>
             Email:<input type ="text" placeholder="Enter Email" class="input">
             <br>
-            <input type="submit" value = "Register" class="input"> <!--onclick = "getValue()"-->
+            <input type="submit" value = "Register" class="input">
         </div>
     </div>
 </div>
@@ -727,8 +781,9 @@
         document.getElementById('food').innerHTML = food;
         document.getElementById('finalVal').innerHTML = total;
 
+
         table = jQuery('#output').append();
-        table=jQuery('<table border=\"1\"><tr><th>Gas</th><th>Entertainment</th><th>Food</th></tr>');
+        table=jQuery('<table border=\"1\" class= "table table-sm"><tr><th>Gas</th><th>Entertainment</th><th>Food</th></tr>');
         table.appendTo(jQuery('#output'));
         for(var i = 0; i<1; i++)
         {
@@ -741,13 +796,14 @@
             }
             jQuery('#output').append('</table>');
 
-            tr = jQuery('<table border=\"1\" id=output><tr></tr>');
+            tr = jQuery('<table border=\"1\" class= table table-sm id=output><tr></tr>');
             tr.appendTo(table);
             td = jQuery('<tr><td>Cost</td><td>'+total+'</td></tr>');
             td.appendTo(tr);
             jQuery('#output').append('</table>');
         }
     };
+
 </script>
 </body>
 </html>
