@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
     <style>
         .input{
             margin-top: 10px;
@@ -738,6 +737,7 @@
             </div>
             <br>
             <div id = "output"></div>
+            <div id="second"></div>
         </div>
         <div id="Login" class="tab-pane fade">
             User Name:<input type ="text" placeholder="Enter User Name" class="input" id="user">
@@ -781,6 +781,13 @@
         document.getElementById('food').innerHTML = food;
         document.getElementById('finalVal').innerHTML = total;
 
+        var maxBudget = document.getElementById("budget").value;
+        if(maxBudget == total)
+            document.getElementById("finalVal").style.backgroundColor = "yellow";
+        else if(maxBudget > total)
+            document.getElementById("finalVal").style.backgroundColor = "green";
+        else
+            document.getElementById("finalVal").style.backgroundColor = "red";
 
         table = jQuery('#output').append();
         table=jQuery('<table border=\"1\" class= "table table-sm"><tr><th>Gas</th><th>Entertainment</th><th>Food</th></tr>');
@@ -796,11 +803,11 @@
             }
             jQuery('#output').append('</table>');
 
-            tr = jQuery('<table border=\"1\" class= table table-sm id=output><tr></tr>');
-            tr.appendTo(table);
-            td = jQuery('<tr><td>Cost</td><td>'+total+'</td></tr>');
-            td.appendTo(tr);
-            jQuery('#output').append('</table>');
+            var tr1 = jQuery('<table border=\"1\" class= table table-sm><tr></tr>');
+            tr1.appendTo(table);
+            var td1 = jQuery('<tr><td>Cost</td><td>'+total+'</td></tr>');
+            td1.appendTo(tr1);
+            jQuery('#second').append('</table>');
         }
     };
 
